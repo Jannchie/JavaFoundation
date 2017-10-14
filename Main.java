@@ -3,14 +3,10 @@ package xin.jannchie;
 public class Main {
 
     public static void main(String[] args) {
+        Solution s = new Solution();
 
-//        Hello hello;
-//        hello = new Hello();
-//        hello.helloWorld();
-
-//        AddDigits addDigits = new AddDigits();
-//        System.out.println(addDigits.addDigits(0));
-
-
+        int[] A = {1, 2, 1, 3, 4, 5, 7, 6};
+        s.findPeak(A);
+        System.out.println(s.findPeak(A));
     }
 }

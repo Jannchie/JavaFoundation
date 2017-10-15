@@ -16,9 +16,6 @@ public class AddDigits {
                 int b = num / ((int) Math.pow(10, i + 1)) * 10;
 
                 answer += a - b;
-                System.out.println(a);
-                System.out.println(b);
-                System.out.println(a - b);
             }
             if (answer / 10 == 0) {
                 return answer;

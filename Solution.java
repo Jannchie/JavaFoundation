@@ -1,5 +1,8 @@
 package xin.jannchie;
 
+/**
+ * @author jannchie
+ */
 public class Solution {
 
 
@@ -36,5 +39,36 @@ public class Solution {
             i++;
         }
         return  profit;
+    }
+
+    public void deleteNode(ListNode node) {
+        // write your code here
+        ListNode nextNode = node.next;
+        node.val = nextNode.val;
+        node.next = nextNode.next;
+    }
+
+    public int[] twoSum(int[] nums, int target) {
+        // write your code here
+        int[] index = new int[2];
+        for (int index_1 = 0; index_1 < nums.length; index_1++) {
+            for (int index_2 = index_1 + 1; index_2 < nums.length; index_2++) {
+                if (nums[index_1] + nums[index_2] == target) {
+                    index[0] = index_1 + 1;
+                    index[1] = index_2 + 1;
+                    return index;
+                }
+            }
+        }
+        return index;
+    }
+
+    public int singleNumber(int[] A) {
+        // write your code here
+        int result = 0;
+        for (int i = 0; i < A.length; i++) {
+            result ^= A[i];
+        }
+        return result;
     }
 }

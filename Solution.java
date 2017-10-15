@@ -1,5 +1,6 @@
 package xin.jannchie;
 
+
 /**
  * @author jannchie
  */
@@ -66,9 +67,48 @@ public class Solution {
     public int singleNumber(int[] A) {
         // write your code here
         int result = 0;
-        for (int i = 0; i < A.length; i++) {
-            result ^= A[i];
+        for (int aA : A) {
+            result ^= aA;
         }
+//        for (int i = 0; i < A.length; i++) {
+//            result ^= A[i];
+//        }
         return result;
+    }
+
+    public TreeNode cloneTree(TreeNode root) {
+        // write your code here
+        if (root == null) {
+            return null;
+        }
+        TreeNode  nRoot = new TreeNode(root.val);
+        nRoot = root;
+        if (nRoot.left != null) {
+            nRoot.left = cloneTree(nRoot.left);
+        }
+        if (nRoot.right != null) {
+            nRoot.right = cloneTree(nRoot.right);
+        }
+        return nRoot;
+    }
+
+    public void invertBinaryTree(TreeNode root) {
+        // write your code here
+        if (root == null) {
+            return;
+        }
+        TreeNode  temp = new TreeNode(root.val);
+
+        if (root.left != null) {
+            invertBinaryTree(root.left);
+        }
+        if (root.right != null) {
+            invertBinaryTree(root.right);
+        }
+
+        root.right = temp;
+        root.right = root.left;
+        root.left = temp;
+
     }
 }

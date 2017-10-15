@@ -4,6 +4,7 @@ package xin.jannchie;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class TreeNode {
     public int val;
     public TreeNode left, right;
@@ -12,6 +13,7 @@ public class TreeNode {
         this.val = val;
         this.left = this.right = null;
     }
+
 
     /**
      * @param root: The root of binary tree.

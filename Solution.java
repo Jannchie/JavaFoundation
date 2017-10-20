@@ -1,6 +1,8 @@
 package xin.jannchie;
 
 
+import static java.lang.Math.pow;
+
 /**
  * @author jannchie
  */
@@ -110,5 +112,33 @@ public class Solution {
         root.right = root.left;
         root.left = temp;
 
+
+    }
+
+    public int flipLights(int n, int m) {
+
+        int lamp = n % 6;
+        int operation = m % 4;
+        boolean[] lampStatus = new boolean[lamp];
+        return 0;
+    }
+
+    public boolean hasCycle(ListNode head) {
+        //TODO:fix this!
+        ListNode temp = head;
+        ListNode current = head;
+        while(current.next != null){
+            while(temp.next != null){
+                if(temp.next == current){
+                    return true;
+                }
+                temp = temp.next;
+            }
+            if(current.next == head) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
     }
 }

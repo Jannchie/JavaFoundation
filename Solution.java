@@ -124,20 +124,23 @@ public class Solution {
     }
 
     public boolean hasCycle(ListNode head) {
-        //TODO:fix this!
-        ListNode temp = head;
-        ListNode current = head;
-        while(current.next != null){
-            while(temp.next != null){
-                if(temp.next == current){
+        // write your code here
+        ListNode slow = head;
+        ListNode fast = head;
+        if(head == null) {
+            return false;
+        }
+        while(fast.next != null){
+            fast = fast.next;
+            if(fast.next != null) {
+                fast = fast.next;
+                slow = slow.next;
+                if (fast == slow) {
                     return true;
                 }
-                temp = temp.next;
+            }else{
+                return false;
             }
-            if(current.next == head) {
-                return true;
-            }
-            current = current.next;
         }
         return false;
     }

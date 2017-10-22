@@ -1,6 +1,8 @@
 package xin.jannchie;
 
 
+import java.util.Stack;
+
 import static java.lang.Math.pow;
 
 /**
@@ -124,7 +126,7 @@ public class Solution {
     }
 
     public boolean hasCycle(ListNode head) {
-        // write your code here
+        // use
         ListNode slow = head;
         ListNode fast = head;
         if(head == null) {
@@ -143,5 +145,21 @@ public class Solution {
             }
         }
         return false;
+    }
+
+    /**
+     * @param a: the root of binary tree a.
+     * @param b: the root of binary tree b.
+     * @return: true if they are identical, or false.
+     */
+    public boolean isIdentical(TreeNode a, TreeNode b) {
+        if(a == null && b == null){
+            return true;
+        }
+        if(a == null && b != null|| a != null & b == null){
+            return false;
+        }
+        return a.val == b.val && isIdentical(a.left,b.left)
+                && isIdentical(a.right,b.right);
     }
 }

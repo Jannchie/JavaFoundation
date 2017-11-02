@@ -8,6 +8,7 @@ import static java.lang.Math.pow;
 /**
  * @author jannchie
  */
+@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 public class Solution {
 
 
@@ -15,7 +16,8 @@ public class Solution {
      * @param A: An integers array.
      * @return: return any of peek positions.
      */
-    public int findPeak(int[] A) {
+    @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
+    public int findPeak(int[] a) {
         // write your code here
         int i=1,j = A.length-2;
         while (i <= j) {
@@ -56,11 +58,11 @@ public class Solution {
     public int[] twoSum(int[] nums, int target) {
         // write your code here
         int[] index = new int[2];
-        for (int index_1 = 0; index_1 < nums.length; index_1++) {
-            for (int index_2 = index_1 + 1; index_2 < nums.length; index_2++) {
-                if (nums[index_1] + nums[index_2] == target) {
-                    index[0] = index_1 + 1;
-                    index[1] = index_2 + 1;
+        for (int index1 = 0; index1 < nums.length; index1++) {
+            for (int index2 = index1 + 1; index2 < nums.length; index2++) {
+                if (nums[index1] + nums[index2] == target) {
+                    index[0] = index1 + 1;
+                    index[1] = index2 + 1;
                     return index;
                 }
             }
@@ -68,14 +70,14 @@ public class Solution {
         return index;
     }
 
-    public int singleNumber(int[] A) {
+    public int singleNumber(int[] a) {
         // write your code here
         int result = 0;
-        for (int aA : A) {
+        for (int aA : a) {
             result ^= aA;
         }
-//        for (int i = 0; i < A.length; i++) {
-//            result ^= A[i];
+//        for (int i = 0; i < a.length; i++) {
+//            result ^= a[i];
 //        }
         return result;
     }
@@ -156,9 +158,12 @@ public class Solution {
         if(a == null && b == null){
             return true;
         }
-        if(a == null && b != null|| a != null & b == null){
+        if(a == null){
+            return false;
+        }else if(b == null){
             return false;
         }
+
         return a.val == b.val && isIdentical(a.left,b.left)
                 && isIdentical(a.right,b.right);
     }

@@ -8,24 +8,22 @@ import static java.lang.Math.pow;
 /**
  * @author jannchie
  */
-@SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
 public class Solution {
 
 
     /**
-     * @param A: An integers array.
+     * @param a: An integers array.
      * @return: return any of peek positions.
      */
-    @SuppressWarnings("AlibabaLowerCamelCaseVariableNaming")
     public int findPeak(int[] a) {
         // write your code here
-        int i=1,j = A.length-2;
+        int i=1,j = a.length-2;
         while (i <= j) {
             int m = (i + j) / 2;
-            if (A[m] > A[m - 1] && A[m] > A[m + 1]) {
+            if (a[m] > a[m - 1] && a[m] > a[m + 1]) {
                 return m;
             } else {
-                if (A[m - 1] < A[m]) {
+                if (a[m - 1] < a[m]) {
                     i = m + 1;
                 } else {
                     j = m - 1;

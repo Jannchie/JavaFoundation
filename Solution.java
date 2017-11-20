@@ -165,4 +165,47 @@ public class Solution {
         return a.val == b.val && isIdentical(a.left,b.left)
                 && isIdentical(a.right,b.right);
     }
+    public class MyQueue {
+        Stack<integer> a;
+        Stack<integer> b;
+        public MyQueue() {
+            // do intialization if necessary
+            a = new Stack<integer>();
+            b = new Stack<integer>();
+        }
+
+        /*
+         * @param element: An integer
+         * @return: nothing
+         */
+        public void push(int element) {
+            // write your code here
+            while(!b.empty()){
+                a.push(b.pop());
+            }
+            a.push();
+        }
+
+        /*
+         * @return: An integer
+         */
+        public int pop() {
+            // write your code here
+            while(!a.empty()){
+                b.push(a.pop());
+            }
+            b.pop();
+        }
+
+        /*
+         * @return: An integer
+         */
+        public int top() {
+            // write your code here
+            while(!a.empty()){
+                b.push(a.pop());
+            }
+            b.peek();
+        }
+    }
 }
